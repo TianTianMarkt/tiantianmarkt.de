@@ -3,139 +3,190 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TianTian Markt | Asian Supermarket Düsseldorf</title>
-  <meta name="description" content="TianTian Markt – asiatischer Supermarkt in Düsseldorf mit Lebensmitteln, Snacks, Getränken, Tiefkühlwaren und frischen Produkten." />
+  <title>TianTian Markt – Coming Soon</title>
+  <meta name="description" content="TianTian Markt – Asian Supermarket Düsseldorf. Coming soon." />
+
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/assets/site.webmanifest">  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #183233;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.9) 45%, rgba(222,244,241,0.75) 100%),
+        linear-gradient(135deg, #f8fbfa 0%, #e8f6f3 100%);
+      overflow: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    .bg-texture {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background:
+        radial-gradient(circle at 15% 75%, #3d8d8a 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 25%, #3d8d8a 0 2px, transparent 3px);
+      background-size: 90px 90px;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      width: 100%;
+      padding: 48px 28px;
+    }
+
+    .logo {
+      width: clamp(160px, 28vw, 320px);
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto 32px;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,0.12));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 76px);
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      color: #075f61;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 280px;
+      max-width: 70%;
+      height: 2px;
+      margin: 26px auto 28px;
+      background: linear-gradient(90deg, transparent, #2caaa4, transparent);
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 560px;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.55;
+      color: #243b3c;
+    }
+
+    .thanks {
+      margin-top: 18px;
+      color: #07817d;
+      font-weight: 700;
+    }
+
+    .contact {
+      margin-top: 36px;
+      font-size: 18px;
+      color: #1f3435;
+    }
+
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .bamboo {
+      position: absolute;
+      width: 240px;
+      height: 420px;
+      opacity: 0.18;
+      border-left: 10px solid #087b76;
+      transform: rotate(18deg);
+    }
+
+    .bamboo::before,
+    .bamboo::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 38px;
+      border-radius: 100% 0 100% 0;
+      background: #087b76;
+      left: 20px;
+    }
+
+    .bamboo::before {
+      top: 80px;
+      transform: rotate(-30deg);
+    }
+
+    .bamboo::after {
+      top: 180px;
+      transform: rotate(25deg);
+    }
+
+    .bamboo.left {
+      left: -60px;
+      top: 30px;
+    }
+
+    .bamboo.right {
+      right: -80px;
+      bottom: 20px;
+      transform: rotate(-160deg);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px 12px;
+      }
+
+      .logo {
+        margin-bottom: 32px;
+      }
+
+      .contact {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+
 <body>
-  <div data-include="partials/nav.html"></div>
+  <main class="page">
+    <div class="bg-texture"></div>
+    <div class="bamboo left"></div>
+    <div class="bamboo right"></div>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow">Neuer Asia-Supermarkt in Düsseldorf</span>
-          <h1 data-i18n="heroTitle">Asien für jeden Tag – mitten in der Stadt.</h1>
-          <p data-i18n="heroText">Entdecke Nudeln, Reis, Saucen, Snacks, Getränke, Tiefkühlwaren und ausgewählte Frischeprodukte aus China, Japan, Korea, Thailand und mehr.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#visit" data-i18n="ctaVisit">Besuch planen</a>
-            <a class="btn btn-secondary" href="#products" data-i18n="ctaExplore">Sortiment entdecken</a>
-          </div>
-        </div>
+    <section class="card">
+      <img class="logo" src="assets/logo.png" alt="TianTian Markt Logo" />
 
-        <div class="hero-card" aria-label="Store visual placeholder">
-          <div class="market-visual">
-            <div class="market-visual-content">
-              <div class="big" data-i18n="visualTitle">TianTian</div>
-              <div class="sub" data-i18n="visualSub">Frisch • Praktisch • Asiatisch</div>
-              <div class="visual-tags">
-                <span data-i18n="tagSnacks">Snacks</span>
-                <span data-i18n="tagDrinks">Getränke</span>
-                <span data-i18n="tagFrozen">Tiefkühl</span>
-                <span data-i18n="tagFresh">Frische</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <h1>Coming Soon</h1>
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="aboutTitle">Eine einfache, freundliche Supermarkt-Webseite.</h2>
-          <p data-i18n="aboutText">Dieses Dummy-Layout bleibt bewusst klar: starke Startseite, Produktkategorien, Wochen-Highlight und praktische Besucherinformationen.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <div class="category-icon">🛒</div>
-            <h3 data-i18n="aboutCard1Title">Alles für jeden Tag</h3>
-            <p data-i18n="aboutCard1Text">Reis, Nudeln, Saucen, Gewürze, Tofu, Konserven und Basics für die tägliche Küche.</p>
-          </article>
-          <article class="card">
-            <div class="category-icon">🥟</div>
-            <h3 data-i18n="aboutCard2Title">Tiefkühl-Favoriten</h3>
-            <p data-i18n="aboutCard2Text">Dumplings, Baozi, Hot-Pot-Zutaten, Seafood, Eis und schnelle Gerichte für zuhause.</p>
-          </article>
-          <article class="card">
-            <div class="category-icon">🍵</div>
-            <h3 data-i18n="aboutCard3Title">Snacks & Getränke</h3>
-            <p data-i18n="aboutCard3Text">Milchtee, Softdrinks, Mochi, Chips, Bonbons, Kekse und saisonale Highlights.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <div class="divider"></div>
 
-    <section class="section" id="products">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="productsTitle">Produktkategorien</h2>
-          <p data-i18n="productsText">Dummy-Karten. Später können diese zu Wolt, Instagram-Beiträgen, einem PDF-Flyer oder eigenen Kategorie-Seiten verlinken.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card"><div class="category-icon">🍜</div><h3 data-i18n="cat1Title">Nudeln & Instant</h3><p data-i18n="cat1Text">Ramen, Udon, Soba, Glasnudeln und Cup Noodles.</p></article>
-          <article class="card"><div class="category-icon">🥫</div><h3 data-i18n="cat2Title">Saucen & Vorrat</h3><p data-i18n="cat2Text">Sojasauce, Chiliöl, Currypaste, Essig und Kochwein.</p></article>
-          <article class="card"><div class="category-icon">🍘</div><h3 data-i18n="cat3Title">Snacks & Süßes</h3><p data-i18n="cat3Text">Seetang-Snacks, Cracker, Mochi, Kekse und Bonbons.</p></article>
-          <article class="card"><div class="category-icon">🥬</div><h3 data-i18n="cat4Title">Frisch & gekühlt</h3><p data-i18n="cat4Text">Ausgewähltes Gemüse, Tofu, Kimchi, Reiskuchen und Kühlware.</p></article>
-          <article class="card"><div class="category-icon">🧋</div><h3 data-i18n="cat5Title">Getränke</h3><p data-i18n="cat5Text">Teegetränke, Milchtee, Saft, Limo, Kaffee und asiatische Getränke.</p></article>
-          <article class="card"><div class="category-icon">🍱</div><h3 data-i18n="cat6Title">Ready to eat</h3><p data-i18n="cat6Text">To-go-Gerichte, Desserts und saisonale Spezialitäten.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="offers">
-      <div class="container">
-        <div class="highlight">
-          <div>
-            <h2 data-i18n="offerTitle">Wochen-Highlight</h2>
-            <p data-i18n="offerText">Hier können wechselnde Angebote, Neuheiten oder saisonale Aktionen stehen. Zum Beispiel: Japanische Snack-Woche, Hot-Pot-Saison, Bubble-Tea-Zutaten oder Neujahrs-Specials.</p>
-          </div>
-          <div class="offer-box">
-            <strong data-i18n="offerBadge">10% Rabatt</strong>
-            <p data-i18n="offerSmall">Dummy-Aktion · nur auf ausgewählte Produkte</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="visit">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="visitTitle">TianTian Markt besuchen</h2>
-          <p data-i18n="visitText">Ersetze die Dummy-Kontaktdaten später durch finale Store-Daten, Parkhinweise und Google-Maps-Link.</p>
-        </div>
-        <div class="info-grid">
-          <div class="card">
-            <h3 data-i18n="hoursTitle">Öffnungszeiten</h3>
-            <ul class="hours-list">
-              <li><strong data-i18n="daysMonSat">Mo–Sa</strong><span>09:00–20:00</span></li>
-              <li><strong data-i18n="daysSunday">Sonntag</strong><span data-i18n="closed">Geschlossen</span></li>
-            </ul>
-            <h3 class="contact-heading" data-i18n="contactTitle">Kontakt</h3>
-            <ul class="contact-list">
-              <li><strong data-i18n="addressLabel">Adresse</strong><span>Immermannstr. 9, 40210 Düsseldorf</span></li>
-              <li><strong data-i18n="phoneLabel">Telefon</strong><span>+49 211 000000</span></li>
-              <li><strong data-i18n="emailLabel">E-Mail</strong><span>info@tiantian-markt.de</span></li>
-            </ul>
-          </div>
-          <div class="map-placeholder">
-            <div>
-              <div class="map-icon">📍</div>
-              <div data-i18n="mapText">Kartenplatzhalter – später durch Google Maps oder ein statisches Standortbild ersetzen.</div>
-            </div>
-          </div>
-        </div>
+      <div class="contact">
+        <div>Immermannstr. 9 - 40210 Düsseldorf</div>
+        <a href="mailto:info@tiantianmarkt.de">info@tiantianmarkt.de</a>
       </div>
     </section>
   </main>
-
-  <div data-include="partials/footer.html"></div>
-  <script src="script.js"></script>
 </body>
 </html>
